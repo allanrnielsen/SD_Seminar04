@@ -46,6 +46,7 @@ pageextension 50100 "CSD ResourceCardExt" extends "Resource Card"
 
     end;
 
+
     var
         [InDataSet]
         ShowMaxField: Boolean;
