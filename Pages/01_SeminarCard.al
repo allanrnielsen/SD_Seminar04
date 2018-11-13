@@ -5,6 +5,9 @@ page 50101 "CSD Seminar"
     SourceTable = "CSD Seminar";
     Caption = 'Seminar';
 
+
+
+
     layout
     {
         area(Content)
@@ -33,7 +36,7 @@ page 50101 "CSD Seminar"
                 {
                 }
 
-                field("Minimum Participants"; "Minumum Participants")
+                field("Minimum Participants"; "Minimum Participants")
                 {
                 }
 
@@ -52,11 +55,11 @@ page 50101 "CSD Seminar"
 
             group(Invoicing)
             {
-                field("Gen. Prod. Costing Group"; "Gen. Prod. Costing Group")
+                field("Gen. Prod. Costing Group"; "Gen. Prod. Posting Group")
                 {
 
                 }
-                field("VAT Prod. Costing Group"; "VAT Prod. Costing Group")
+                field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
                 {
 
                 }
@@ -93,7 +96,7 @@ page 50101 "CSD Seminar"
                 {
                     //Runobject=page "CSD Seminar Comment Sheet";
                     //RunPageLink = "table name" = const(Seminar),"No." = field("No.");
-                    Image = comment;
+                    Image = Comment;
                     Promoted = true;
                     PromotedIsBig = true;
                     PromotedOnly = true;

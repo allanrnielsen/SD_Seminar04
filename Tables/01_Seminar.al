@@ -1,6 +1,9 @@
 table 50101 "CSD Seminar"
 {
     Caption = 'Seminar';
+    LookupPageId = "CSD Seminar List";
+    DrillDownPageId = "CSD Seminar List";
+
 
 
     fields
@@ -37,9 +40,9 @@ table 50101 "CSD Seminar"
 
         }
 
-        field(4; "Minumum Participants"; Integer)
+        field(4; "Minimum Participants"; Integer)
         {
-            Caption = 'Minumun Participants';
+            Caption = 'Minimun Participants';
 
         }
         field(5; "Maximum Participants"; Integer)
@@ -77,22 +80,22 @@ table 50101 "CSD Seminar"
             Caption = 'Seminar Price';
             AutoFormatType = 1;
         }
-        field(11; "Gen. Prod. Costing Group"; Code[10])
+        field(11; "Gen. Prod. Posting Group"; Code[10])
         {
             Caption = 'Gen. Prod. Posting Group';
             TableRelation = "Gen. Product Posting Group";
 
             trigger OnValidate()
             begin
-                if (xrec."Gen. Prod. Costing Group" <> "Gen. Prod. Costing Group") then begin
-                    if GenProdPostingGroup.ValidateVatProdPostingGroup(GenProdPostingGroup, "Gen. Prod. Costing Group") then
-                        validate("VAT Prod. Costing Group", GenProdPostingGroup."Def. VAT Prod. Posting Group");
+                if (xrec."Gen. Prod. Posting Group" <> "Gen. Prod. Posting Group") then begin
+                    if GenProdPostingGroup.ValidateVatProdPostingGroup(GenProdPostingGroup, "Gen. Prod. Posting Group") then
+                        validate("VAT Prod. Posting Group", GenProdPostingGroup."Def. VAT Prod. Posting Group");
                 end;
 
             end;
         }
 
-        field(12; "VAT Prod. Costing Group"; Code[10])
+        field(12; "VAT Prod. Posting Group"; Code[10])
         {
             Caption = 'VAT Prod. Posting Group';
             TableRelation = "VAT Product Posting Group";

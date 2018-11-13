@@ -1,6 +1,6 @@
 page 50102 "CSD Seminar List"
 {
-    Caption = 'Seminar';
+    Caption = 'Seminar List';
     PageType = List;
     UsageCategory = Lists;
     SourceTable = "CSD Seminar";
@@ -14,30 +14,68 @@ page 50102 "CSD Seminar List"
     {
         area(Content)
         {
-            group(GroupName)
+            repeater(Group)
             {
-                field(Name; NameSource)
+                field("no."; "No.")
                 {
-                    ApplicationArea = All;
+                }
+
+                field(Name; Name)
+                {
 
                 }
+
+                field("Seminar Duration"; "Seminar Duration")
+                {
+
+                }
+
+                field("Seminar Price"; "Seminar Price")
+                {
+
+                }
+
+                field("Minumum Participants"; "Minimum Participants")
+                {
+
+                }
+
+                field("Maximum Participants"; "Maximum Participants")
+                {
+                }
+
+            }
+
+
+        }
+        area(FactBoxes)
+        {
+            systempart("Links"; links)
+            {
+
+            }
+            systempart("Notes"; notes)
+            {
+
             }
         }
+
     }
 
     actions
     {
-        area(Processing)
+        area(Navigation)
         {
-            action(ActionName)
+            group("&Seminar")
             {
-                ApplicationArea = All;
-
-                trigger OnAction()
-                begin
-
-                end;
+                action("C&omment")
+                {
+                    //RunObject = page "CSD Seminar Comment Sheet";
+                    //RunPageLink = "Table Name" = const (Seminar), "No." = field ("No.");
+                    //Image = Comment;
+                }
             }
+
         }
     }
 
